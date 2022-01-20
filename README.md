@@ -1,19 +1,14 @@
-# ncurity-frontend3
+# ncurity-frontend
+> 엔큐리티 프론트엔드 직무 과제
 
-## Project setup
-```
-npm install
-```
+### 사용한 라이브러리
+`Vue2(@vue/cli)`, `TailwindCSS`, `ag-grid`, `chartjs`
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+## Preview
+```bash
+$ npm install
+$ npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Demo
+![demo](ncurity-demo.gif)
