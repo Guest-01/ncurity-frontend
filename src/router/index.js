@@ -11,12 +11,8 @@ const routes = [
     name: 'Home',
     component: Home,
     beforeEnter: (to, from, next) => {
-      if (store.state.user === null) {
-        console.log('Not logged in')
-        return next("/login");
-      }
-      console.log('LoggedIn')
-      next("/dashboard");
+      //사실상 없는 경로이며 무조건 리다이렉트 (로그인체크는 전역가드에서 먼저 함)
+      next('/dashboard')
     }
   },
   {
@@ -50,5 +46,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+// 로그인을 시키기위한 전역 라우터가드
+router.beforeEach((to, from, next) => {
+  if (store.state.user === null && to.path !== '/login') {
+    console.log('user is null (router guard)');
+    return next('/login')
+  }
+  next()
+});
 
 export default router

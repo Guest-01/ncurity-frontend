@@ -1,5 +1,18 @@
 <template>
-  <nav class="fixed w-full flex justify-between px-6 py-4 items-center bg-white">
+  <nav
+    class="
+      fixed
+      w-full
+      flex
+      justify-between
+      px-6
+      py-4
+      items-center
+      bg-white
+      max-w-5xl
+      mx-auto
+    "
+  >
     <div class="flex items-center">
       <img :src="logo" alt="logo" />
       <span class="text-xl text-blue-500 cursor-default">{{ pageName }}</span>
@@ -21,11 +34,12 @@
       </li>
     </ul>
     <div class="flex space-x-4 items-center">
-      <div class="flex space-x-1 items-center cursor-default">
+      <div v-if="user" class="flex space-x-1 items-center cursor-default">
         <i class="bx bx-user"></i>
-        <span>Username</span>
+        <span>{{ user.name }}</span>
       </div>
       <button
+        @click="logout"
         class="
           flex
           space-x-1
@@ -53,6 +67,18 @@ export default {
     return {
       logo,
     };
+  },
+  methods: {
+    logout() {
+      this.$store.dispatch("logout");
+      this.$router.push("/login");
+      return;
+    },
+  },
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
   },
 };
 </script>
