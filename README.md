@@ -1,14 +1,6 @@
-# ncurity-frontend
-> 엔큐리티 프론트엔드 직무 과제
+# Ncurity Platform Frontend 과제
 
-### 사용한 라이브러리
-`Vue2(@vue/cli)`, `TailwindCSS`, `ag-grid`, `chartjs`
+> 해당 과제의 저작권은 엔큐리티플랫폼에 귀속됩니다.   
+> 본 Repository는 과제제출용이며, 개인적 포트폴리오 등의 용도로 사용할 수 없습니다.         
 
-## Preview
-```bash
-$ npm install
-$ npm run serve
-```
-
-## Demo
-![demo](ncurity-demo.gif)
+> Copyright ⓒ 2021 ncurity platform. All Rights Reserved.
